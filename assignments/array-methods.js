@@ -92,6 +92,20 @@ let ticketPriceTotal = runners.reduce((total, taxes) => {
 
 // Problem 1
 
+let companies = runners.map(function(company) {
+    return company.company_name;
+    });
+   console.log(companies);
+
 // Problem 2
 
+let twoXL = runners.filter((big) => {
+    return big.shirt_size === '2XL'
+  });
+  console.log(twoXL);  
+
 // Problem 3
+
+let emailAddress = runners.forEach(function(emailAddress) {
+    console.log(emailAddress.email);
+  });
