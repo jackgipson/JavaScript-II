@@ -26,7 +26,11 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 
   cb(arr.length);
-  }
+}
+getLength(items, (length) => {
+console.log(length);
+});
+
 getLength(items, (length) => {
   console.log(length);
 });
