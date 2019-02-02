@@ -2,13 +2,69 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 
+function parentFunc() {
+  const a = 1;
+  const s = 5;
+  console.log(a * s);
+  function innerFunc() {
+    const b = 2;
+    const c = 3;
+    console.log(a + b + c + s);
+    function anotherFunc() {
+      console.log((a + b) + (c * s));
+      function fourthFunc () {
+        console.log(a * b * c * s);
+      }
+        fourthFunc();
+    }
+      anotherFunc();
+  }
+     innerFunc();
+}
+
+parentFunc();
+
+// ===============More Complex Closure Setup=================
+
+function parentFunc() {
+  const a = 1;
+  const s = 5;
+  console.log(a * s);
+  function innerFunc() {
+    const b = 2;
+    const c = 3;
+    console.log(a + b + c + s);
+    function anotherFunc() {
+      console.log((a + b) + (c * s));
+      function fourthFunc () {
+        return a * b * c * s;
+      }
+      return fourthFunc();
+    }
+    return anotherFunc();
+  }
+   return innerFunc;
+}
+
+const equals = parentFunc();
+console.log(equals());
+
+
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
-};
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+
+    let count = 0;
+    return function() {
+      //count = count + 1;
+      return ++count;
+    }
+  };
+  
+  const newCounter = counter();
+  console.log(newCounter());
+  console.log(newCounter());
+
+
 
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
