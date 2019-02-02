@@ -27,9 +27,6 @@ function getLength(arr, cb) {
 
   cb(arr.length);
 }
-getLength(items, (length) => {
-console.log(length);
-});
 
 getLength(items, (length) => {
   console.log(length);
